@@ -1,5 +1,7 @@
 ## Basic Configuration
 
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 baseurl = "https://shenoybr.github.io/hugo-goa-demo/" 
 builddrafts = false
 canonifyurls = false
@@ -9,8 +11,8 @@ contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 
-author = "Erlich Bachman"
-title = "Erlich Bachman"
+author = "Chunji Wang"
+title = "Chunji Wang"
 
 theme = "hugo-goa"
 
@@ -21,48 +23,45 @@ enableRobotsTXT = true
 
 ## Site Settings
 [params]
-author = "Erlich Bachman"
-intro = "Startup Guru Extraordinaire"
-description = "Now @Pied Piper. Previously @Hacker Hostel, @Bachmanity and @Aviato. <br/> \"What is F times 5? It's Fleventy-five.\""
+author = "Chunji Wang"
+intro = "Data Scientist, Ph.D."
+description = "\"It was good while it lasted.\""
 authorimage = "headshot.jpg"
 dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
 [params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
+description = "Chunji Wang's Personal Website"
+keywords = "blog"
 
 ## Social Accounts
 [params.social]
-github = "<username>"
-instagram = "<username>"
-xing = "<username>"
-linkedin = "<username>"
-twitter = "<username>"
-facebook = "<username>"
-google = "<username>"
-stackoverflow = "<username>"
-email = "you@example.com"
+github = "chunjiw"
+linkedin = "chunjiw"
+twitter = "chunjiw"
+facebook = "chunji.wang"
+# stackoverflow = "4966531"
+email = "chunjiw@gmail.com"
 
 ## Extras
 [params.extra]
-copyright = "© 2016. Erlich Bachman. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)." 
-poweredby = true
+copyright = "© 2018 Chunji Wang. All Rights Reserved." 
+poweredby = false
 highlightjs = true
 
 ## Main Menu
 [[menu.main]]
-    name = "blog"
+    name = "博客"
+    identifier = "chinese"
     weight = 100
+    url = "/cn/"
+[[menu.main]]
+    name = "blog"
+    weight = 200
     identifier = "blog"
     url = "/blog/"
 [[menu.main]]
     name = "about"
     identifier = "about"
-    weight = 200
-    url = "/about/"
-[[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
     weight = 300
-    url = "/coderag/"
+    url = "/about/"
