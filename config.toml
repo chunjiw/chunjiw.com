@@ -38,8 +38,8 @@ keywords = "blog"
 [params.social]
 github = "chunjiw"
 linkedin = "chunjiw"
-twitter = "chunjiw"
-facebook = "chunji.wang"
+# twitter = "chunjiw"
+# facebook = "chunji.wang"
 # stackoverflow = "4966531"
 email = "chunjiw@gmail.com"
 
@@ -60,8 +60,8 @@ highlightjs = true
     weight = 200
     identifier = "blog"
     url = "/blog/"
-[[menu.main]]
-    name = "about"
-    identifier = "about"
-    weight = 300
-    url = "/about/"
+#[[menu.main]]
+#    name = "about"
+#    identifier = "about"
+#    weight = 300
+#    url = "/about/"
