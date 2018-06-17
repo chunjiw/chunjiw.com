@@ -13,7 +13,7 @@ description: "你还记得你上次看到楷体字是什么时候么？"
 
 ---
 
-<img src="/cn/2018-06-17-fall-of-kai-font_files/300pxkanji.png" alt="楷体" width="50%" />
+<img class="middle" src="/cn/2018-06-17-fall-of-kai-font_files/300pxkanji.png" alt="楷体" width="50%" />
 
 你还记得你上次看到楷体字是什么时候么？
 

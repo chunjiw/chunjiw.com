@@ -260,3 +260,9 @@ pre > code {
     word-wrap: initial;
     word-break: initial;
 }
+
+.middle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
