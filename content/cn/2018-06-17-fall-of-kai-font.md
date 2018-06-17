@@ -12,6 +12,7 @@ showpagemeta: yes
 description: "你还记得你上次看到楷体字是什么时候么？"
 
 ---
+![](/cn/2018-06-17-fall-of-kai-font_files/Kaitif.svg)
 
 你还记得你上次看到楷体字是什么时候么？
 
