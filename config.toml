@@ -1,6 +1,7 @@
 ## Basic Configuration
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+hasCJKLanguage = true
 
 baseurl = "https://chunjiw.com/" 
 builddrafts = false
