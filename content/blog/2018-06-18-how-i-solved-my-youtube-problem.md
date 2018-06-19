@@ -65,7 +65,7 @@ Apparently, this method was not sustainable.
 [MobiLock](https://mobilock.in/) was a service provider to help companies manage "work devices". 
 The administrator had great control over what apps were available on a particular device. 
 I set it up and left the admin passcode at work so that I could not change the setup after I got home. 
-The obvious thing to do was to enable WeChat but disable YouTube; however, WeChat had a built-in browser through which [m.youtube.com]() was available. 
+The obvious thing to do was to enable WeChat but disable YouTube; however, WeChat had a built-in browser through which m.youtube.com was available. 
 Not to mention that MobiLock was a complex system that made the Android device very cumbersome to use.
 
 ## Resolve
@@ -80,15 +80,15 @@ The problem stems partly from technology; why not seek help from technology, rat
 
 So I started my research. 
 The rule of thumb is to set roadblocks, to make it very inconvenient to watch YouTube, while not sacrificing other conveniences. 
-[MobiLock]() is a failed attempt. 
+Mobilock is a failed attempt. 
 
 ## My Solution
 
 There are three ways to access YouTube, in order of frequency:
 
 1. YouTube App via mobile phones,
-2. YouTube desktop site [www.youtube.com]() via desktop browsers,
-3. YouTube mobile site [m.youtube.com]() via mobile browsers.
+2. YouTube desktop site www.youtube.com via desktop browsers,
+3. YouTube mobile site m.youtube.com via mobile browsers.
 
 #### YouTube App
 The YouTube App can be blocked via [AppLock](https://play.google.com/store/apps/details?id=com.domobile.applock). 
@@ -96,7 +96,7 @@ The YouTube App can be blocked via [AppLock](https://play.google.com/store/apps/
 So all I need to do is to block YouTube and Settings when the device is connected to home wifi, and leave the password at work.
 
 #### YouTube Mobile Site
-To block [m.youtube.com]() on my Android, I [rooted the device](https://forum.xda-developers.com/oneplus-5/how-to/oneplus-5-unlock-bootloader-flash-twrp-t3624877), installed an [editor](https://play.google.com/store/apps/details?id=com.estrongs.android.pop), and edited the `/etc/hosts` file to add a line:
+To block m.youtube.com on my Android, I [rooted the device](https://forum.xda-developers.com/oneplus-5/how-to/oneplus-5-unlock-bootloader-flash-twrp-t3624877), installed an [editor](https://play.google.com/store/apps/details?id=com.estrongs.android.pop), and edited the `/etc/hosts` file to add a line:
 
 ```
     127.0.0.1  m.youtube.com
