@@ -1,0 +1,59 @@
+---
+title: An Interview Question on Statistics
+author: Chunji Wang
+date: '2018-07-02'
+slug: an-interview-question-on-statistics
+categories: []
+tags:
+  - statistics
+comments: no
+showcomments: yes
+showpagemeta: yes
+description: "How many draws are needed to paint M balls red in N white balls?"
+---
+## Credit
+The question is provided by [Yueyan Wang](https://github.com/yueyanw). The two solutions are provided by [Yueyan Wang](https://github.com/yueyanw) and [Rongpeng Li](https://github.com/Rongpeng)
+
+## The Question
+一个箱子里有N个白色的球，每次从中随机抽取一个。
+如果球是白色的，则涂成红色后放回去；
+如果抽到已经涂成红色的球，就直接放回去，再抽。
+如此重复，直到M个球涂成红色。
+请问一共需要抽取多少回？
+
+### Method 1
+The events of painting each ball are independent events from eath other.
+Therefore we can calculate the expectation of number of draws associated with each red ball, and take a sum.
+
+Assume $m$ balls are already painted red. 
+To paint the $(m+1)$-th white ball, there is $m/N$ chance that we pick one of the red balls, in which case we need to draw again; 
+there is $\frac{N-m}{N}$ chance that we pick one of the white balls, in which case we don't need to draw anymore.
+So the probability of drawing $i$ times is
+$$
+\Big(\frac{m}{N}\Big)^{i - 1} \frac{N-m}{N}
+$$
+So the expectation number of draws to paint the $(m + 1)$-th ball is
+$$
+\frac{N-m}{N} \sum_{i = 1}^\infty i\Big(\frac{m}{N}\Big)^{i - 1} = \frac{N}{N-m}
+$$
+Then the total number of draws should be
+$$
+T(M) = \sum_{m=0}^{M-1} \frac{N}{N-m}
+$$
+
+### Method 2: Recursion
+Assume we know $T(m)$, how do we get $T(m+1)$?
+After $m$ balls are painted red, the next draw have two possibilities:
+
+1. We are lucky to draw a white ball, $p = \frac{N-m}{N}$. In this case, only 1 more draw is needed;
+2. We draw a red ball, $p = \frac{m}{N}$. In this case, we almost did nothing, going back to square one. That is, we still need $T(m+1)$ draws.
+
+So, 
+$$
+T(m+1) = \frac{N-m}{N}(1+T(m)) + \frac{m}{N}(1 + T(m+1)) \\ = 1 + \frac{N-m}{N}T(m) + \frac{m}{N}T(m+1)
+$$
+This is essentially
+$$
+T(m + 1) =  T(m) + \frac{N}{N-m}
+$$
+Which is the same as Method 1.

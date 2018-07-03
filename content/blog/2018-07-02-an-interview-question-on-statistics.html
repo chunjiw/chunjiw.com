@@ -1,0 +1,48 @@
+---
+title: An Interview Question on Statistics
+author: Chunji Wang
+date: '2018-07-02'
+slug: an-interview-question-on-statistics
+categories: []
+tags:
+  - statistics
+comments: no
+showcomments: yes
+showpagemeta: yes
+description: "How many draws are needed to paint M balls red in N white balls?"
+---
+
+
+
+<div id="credit" class="section level2">
+<h2>Credit</h2>
+<p>The question is provided by <a href="https://github.com/yueyanw">Yueyan Wang</a>. The two solutions are provided by <a href="https://github.com/yueyanw">Yueyan Wang</a> and <a href="https://github.com/Rongpeng">Rongpeng Li</a></p>
+</div>
+<div id="the-question" class="section level2">
+<h2>The Question</h2>
+<p>一个箱子里有N个白色的球，每次从中随机抽取一个。 如果球是白色的，则涂成红色后放回去； 如果抽到已经涂成红色的球，就直接放回去，再抽。 如此重复，直到M个球涂成红色。 请问一共需要抽取多少回？</p>
+<div id="method-1" class="section level3">
+<h3>Method 1</h3>
+<p>The events of painting each ball are independent events from eath other. Therefore we can calculate the expectation of number of draws associated with each red ball, and take a sum.</p>
+<p>Assume <span class="math inline">\(m\)</span> balls are already painted red. To paint the <span class="math inline">\((m+1)\)</span>-th white ball, there is <span class="math inline">\(m/N\)</span> chance that we pick one of the red balls, in which case we need to draw again; there is <span class="math inline">\(\frac{N-m}{N}\)</span> chance that we pick one of the white balls, in which case we don’t need to draw anymore. So the probability of drawing <span class="math inline">\(i\)</span> times is <span class="math display">\[
+\Big(\frac{m}{N}\Big)^{i - 1} \frac{N-m}{N}
+\]</span> So the expectation number of draws to paint the <span class="math inline">\((m + 1)\)</span>-th ball is <span class="math display">\[
+\frac{N-m}{N} \sum_{i = 1}^\infty i\Big(\frac{m}{N}\Big)^{i - 1} = \frac{N}{N-m}
+\]</span> Then the total number of draws should be <span class="math display">\[
+T(M) = \sum_{m=0}^{M-1} \frac{N}{N-m}
+\]</span></p>
+</div>
+<div id="method-2-recursion" class="section level3">
+<h3>Method 2: Recursion</h3>
+<p>Assume we know <span class="math inline">\(T(m)\)</span>, how do we get <span class="math inline">\(T(m+1)\)</span>? After <span class="math inline">\(m\)</span> balls are painted red, the next draw have two possibilities:</p>
+<ol style="list-style-type: decimal">
+<li>We are lucky to draw a white ball, <span class="math inline">\(p = \frac{N-m}{N}\)</span>. In this case, only 1 more draw is needed;</li>
+<li>We draw a red ball, <span class="math inline">\(p = \frac{m}{N}\)</span>. In this case, we almost did nothing, going back to square one. That is, we still need <span class="math inline">\(T(m+1)\)</span> draws.</li>
+</ol>
+<p>So, <span class="math display">\[
+T(m+1) = \frac{N-m}{N}(1+T(m)) + \frac{m}{N}(1 + T(m+1)) \\ = 1 + \frac{N-m}{N}T(m) + \frac{m}{N}T(m+1)
+\]</span> This is essentially <span class="math display">\[
+T(m + 1) =  T(m) + \frac{N}{N-m}
+\]</span> Which is the same as Method 1.</p>
+</div>
+</div>
